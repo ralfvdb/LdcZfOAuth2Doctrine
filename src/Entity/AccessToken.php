@@ -13,19 +13,19 @@ class AccessToken
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="access_token", type="string")
      */
     protected $token;
 
     /**
      * @ORM\ManyToOne(targetEntity="LdcZfOAuth2Doctrine\Entity\Client")
-     * @ORM\JoinColumn(name="client", referencedColumnName="id")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="client_id")
      */
     protected $client;
 
     /**
      * @ORM\ManyToOne(targetEntity="LdcZfOAuth2Doctrine\Entity\UserEntity")
-     * @ORM\JoinColumn(name="user", referencedColumnName="user_id")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
      */
     protected $user;
 

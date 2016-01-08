@@ -28,12 +28,12 @@ class Scope
 
     /**
      * @ORM\ManyToOne(targetEntity="LdcZfOAuth2Doctrine\Entity\Client")
-     * @ORM\JoinColumn(name="client", referencedColumnName="id")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="client_id")
      */
     protected $client;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(name="is_default", type="boolean")
      */
     protected $isDefault;
 

@@ -14,20 +14,20 @@ class Client
      * @ORM\GeneratedValue(strategy="NONE")
      * @ORM\Column(type="string")
      */
-    protected $id;
+    protected $client_id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="client_secret", type="string")
      */
     protected $secret;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="redirect_uri", type="string")
      */
     protected $redirectUri;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(name="grant_types", type="string", nullable=true)
      */
     protected $grantTypes;
 
@@ -38,7 +38,7 @@ class Client
 
     /**
      * @ORM\ManyToOne(targetEntity="LdcZfOAuth2Doctrine\Entity\UserEntity")
-     * @ORM\JoinColumn(name="user", referencedColumnName="user_id")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
      */
     protected $user;
 

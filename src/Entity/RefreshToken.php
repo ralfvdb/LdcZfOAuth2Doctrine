@@ -5,26 +5,26 @@ use Doctrine\ORM\Mapping AS ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="oauth_refresh_token")
+ * @ORM\Table(name="oauth_refresh_tokens")
  */
 class RefreshToken
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\Column(type="string")
+     * @ORM\Column(name="refresh_token", type="string")
      */
     protected $token;
 
     /**
      * @ORM\ManyToOne(targetEntity="LdcZfOAuth2Doctrine\Entity\Client")
-     * @ORM\JoinColumn(name="client", referencedColumnName="id")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="client_id")
      */
     protected $client;
 
     /**
      * @ORM\ManyToOne(targetEntity="LdcZfOAuth2Doctrine\Entity\UserEntity")
-     * @ORM\JoinColumn(name="user", referencedColumnName="user_id")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
      */
     protected $user;
 
